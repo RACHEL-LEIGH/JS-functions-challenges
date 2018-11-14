@@ -1,0 +1,97 @@
+// #1 Old Enough to Vote
+
+const canIVote = (age) => age >= 18 ? true : false ;
+
+console.log(canIVote(33)); //true
+console.log(canIVote(18)); //true
+console.log(canIVote(14)); //false
+
+
+// #2 Agree or Disagree
+
+const agreeOrDisagree = (str1, str2) => {
+  if(str1 === str2) {
+    return 'You agree!';
+  }
+  else {
+    return 'You disagree!';
+  }
+}
+
+console.log(agreeOrDisagree("yep","yep")); //You agree!
+console.log(agreeOrDisagree("yass","yass")); //You agree!
+console.log(agreeOrDisagree("nah","yeah")); //You disagree!
+console.log(agreeOrDisagree("nope","noo")); //You disagree!
+
+// # 3 Determining Life Phase
+
+const lifePhase = (age) => {
+  if(age >= 0 && age <= 3) {
+    return 'baby';
+  }
+  else if (age >= 4 && age <= 12) {
+    return 'child';
+  }
+  else if (age >= 13 && age <= 19) {
+    return 'teen';
+  }
+  else if (age >= 20 && age <= 64) {
+    return 'adult';
+  }
+  else if (age >= 65 && age <= 140) {
+    return 'senior citizen';
+  }
+  else {
+    return 'This is not a valid age'
+  }
+}
+
+console.log(lifePhase(5)); //child
+console.log(lifePhase(0)); //baby
+console.log(lifePhase(-2)); //not valid
+console.log(lifePhase(1)); //baby
+console.log(lifePhase(15)); //teen
+console.log(lifePhase(28)); //adult
+console.log(lifePhase(76)); //senior citizen
+console.log(lifePhase(145)); //not valid
+
+
+// #4 Calculating Final Grade
+
+const finalGrade = (midterm, final, homework) => {
+    if ((midterm < 0 || midterm > 100) || (final < 0 || final > 100) || (homework < 0 || homework > 100)) {
+        return 'You have entered an invalid grade.'
+    }
+    let average = (midterm + final + homework) / 3
+    if (average < 60) {
+        return 'F'
+    }
+    else if (average < 70) {
+        return 'D'
+    }
+    else if (average < 80) {
+        return 'C'
+    }
+    else if (average < 90) {
+        return 'B'
+    } else {
+        return 'A'
+    }
+}
+
+console.log(finalGrade(0, -24, -3)); //invalid
+console.log(finalGrade(98, 97, 95)); // A
+console.log(finalGrade(77, 74, 75)); // C
+console.log(finalGrade(67, 104, 86)); //invalid
+
+
+// #5 Reporting for Duty
+
+const reportingForDuty = (rank, lastName) => {
+  return `${rank} ${lastName} reporting for duty!`
+}
+
+console.log(reportingForDuty('Private', 'Fido')); // 'Private Fido reporting for duty!'
+console.log(reportingForDuty('Colonel', 'Bryant')); // 'Colonel Bryant reporting for duty!'
+console.log(reportingForDuty('Sergeant', 'Jones')); // 'Sergeant Jones reporting for duty!'
+
