@@ -1,0 +1,78 @@
+//#6 Roll the Dice (roll two die and add the results together)
+
+const rollTheDice = () => {
+    let die1 = Math.floor(Math.random() * 6 + 1)
+    let die2 = Math.floor(Math.random() * 6 + 1)
+    return die1 + die2
+} 
+
+console.log(rollTheDice());
+
+
+//#7 Calculate Weight
+
+const calculateWeight = (earthWeight, planet) => {
+
+switch (planet){
+  case planet = 'Mercury':
+    return earthWeight * 0.378;
+    case planet = 'Venus':
+    return earthWeight * 0.907;
+    case planet = 'Mars':
+    return earthWeight * 0.377;
+    case planet = 'Jupiter':
+    return earthWeight * 2.36;
+    case planet = 'Saturn':
+    return earthWeight * 0.916;
+    default : 
+    return 'Invalid Planet Entry.';
+}
+}
+
+console.log(calculateWeight(100, 'Jupiter'));  // 236
+console.log(calculateWeight(100, 'Mars'));  // 37.7
+console.log(calculateWeight(100, 'Pluto'));  // Invalid Planet Entry
+
+
+// #8 Truthy or Falsy
+
+const truthyOrFalsy = value => value ? true : false 
+
+console.log(truthyOrFalsy(0)); //false
+console.log(truthyOrFalsy('')); //false
+console.log(truthyOrFalsy(1)); //true
+console.log(truthyOrFalsy('cactus')); //true
+
+
+// #9 Imaginary Friends 
+
+/*A person's number of imaginary friends is always 33% of their total friends.
+Write a function that takes in the number of friends a person has & 
+returns the number of imaginary friends they have.*/
+
+const numImaginaryFriends = (num) => {
+  imaginary = Math.round(num * .33)
+  return imaginary;
+  
+}
+
+console.log(numImaginaryFriends(18)); // 6
+console.log(numImaginaryFriends(22)); // 7
+console.log(numImaginaryFriends(0)); // 0
+
+
+// #10 Silly Sentence (string interpolation)
+
+const sillySentence = (adj, verb, noun) => {
+  return ('I am so ' + `${adj}` + ' because I ' + `${verb}` + ' coding! Time to write some more awesome ' + `${noun}` + '!');
+  
+}
+
+console.log(sillySentence('excited', 'love', 'functions')); 
+// I am so excited because I love coding! Time to write some more awesome functions!
+
+console.log(sillySentence('happy', 'adore', 'code'));
+// I am so happy because I adore coding! Time to write some more awesome code!
+
+
+
