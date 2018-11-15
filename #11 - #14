@@ -1,0 +1,108 @@
+//#10 Your Age in a Given Year
+
+const howOld = (age, year) => {
+
+    let dateToday = new Date();
+    let thisYear = dateToday.getFullYear();
+  
+    const yearDifference = year - thisYear
+    const newAge = age + yearDifference
+    if (newAge < 0) {
+        return `The year ${year} was ${-newAge} years before you were born`
+    } else if (newAge > age) {
+        return `You will be ${newAge} in the year ${year}`
+    } else {
+        return `You were ${newAge} in the year ${year}`
+    }
+}
+
+console.log(howOld(28, 2050)); //You will be 60 in the year 2050
+console.log(howOld(28, 1987)); //The year 1987 was 3 years before you were born
+console.log(howOld(28, 1996)); //You were 6 in the year 1996
+
+
+//#12 Determining Familial Relationship Based on Shared DNA Percentage
+
+const whatRelation = percentSharedDNA => {
+    if (percentSharedDNA === 100) {
+        return 'You are likely identical twins.'
+    }
+    if (percentSharedDNA > 34) {
+        return 'You are likely parent and child or full siblings.'
+    }
+    if (percentSharedDNA > 13) {
+        return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+    }
+    if (percentSharedDNA > 5) {
+        return 'You are likely 1st cousins.'
+    }
+    if (percentSharedDNA > 2) {
+        return 'You are likely 2nd cousins.'
+    }
+    if (percentSharedDNA > 0) {
+        return 'You are likely 3rd cousins'
+    }
+    return 'You are likely not related.'
+}
+
+console.log(whatRelation(34)); //You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.
+console.log(whatRelation(3)); //You are likely 2nd cousins.
+
+
+// #13 Tip Calculator
+
+const tipCalculator = (quality, total) => {
+    switch (quality) {
+        case 'bad':
+            return total * .05;
+        case 'ok':
+            return total * .15;
+        case 'good':
+            return total * .20;
+        case 'excellent':
+            return total * .30;
+        default:
+            return total * .18;
+
+    }
+}
+
+console.log(tipCalculator('good', 100)); //20
+console.log(tipCalculator('bad', 100)); //5
+console.log(tipCalculator('weird', 100)); //18
+
+
+// #14 Strings to Emoticons
+
+const toEmoticon = (str) => {
+  
+  switch (str) {
+    case 'shrug':
+      return '|_{"}_|';
+      break;
+      
+       case 'smiley face':
+      return ':)';
+      break;
+        
+       case 'frowny face':
+      return ':(';
+      break;
+      
+         case 'winky face':
+      return ';)';
+      break;
+      
+      case 'heart':
+      return '<3';
+      break;
+      
+    default:
+      return '|_(* ~ *)_|';
+  }
+}
+
+console.log(toEmoticon("whatever")) ;
+// '|_(* ~ *)_|'
+console.log(toEmoticon("winky face"));
+// ;)
